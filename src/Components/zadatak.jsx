@@ -21,7 +21,6 @@ const Zadatak = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Provjeri obavezna polja
     if (
       !korisnik.ime ||
       !korisnik.spol ||
@@ -32,22 +31,18 @@ const Zadatak = () => {
       return;
     }
 
-    // Provjeri valjanost unosa za polje spola
     if (korisnik.spol !== "muško" && korisnik.spol !== "žensko") {
-      alert("Polje spola mora biti popunjeno sa 'muško' ili 'žensko'.");
+      alert("Polje -Spol- mora biti popunjeno sa 'muško' ili 'žensko'.");
       return;
     }
 
-    // Spremi korisnika u stanje i prikaži ga na ekranu
     console.log("Novi korisnik:", korisnik);
 
-    // Dodajte novog korisnika u listu korisnika s jedinstvenim ključem
     setListaKorisnika([
       ...listaKorisnika,
       { ...korisnik, id: crypto.randomUUID() },
     ]);
 
-    // Resetiraj polja na početno stanje
     setKorisnik({
       ime: "",
       spol: "",
@@ -102,10 +97,11 @@ const Zadatak = () => {
           />
         </label>
         <br />
-        <input type="submit" value="Potvrdi" />
+        <button className="myButton" type="submit">
+          Potvrdi
+        </button>
       </form>
 
-      {/* Prikaz liste unesenih korisnika */}
       <ul>
         {listaKorisnika.map((korisnik) => (
           <li key={crypto.randomUUID()}>{korisnik.ime}</li>

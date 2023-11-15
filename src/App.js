@@ -1,6 +1,5 @@
-//import logo from './logo.svg';
-import './App.css';
-import Forme from "./Components/forme"; // Pretpostavljajući da je UnosForme u istom direktoriju ili prilagodite putanju
+import "./App.css";
+//import Forme from "./Components/forme"; 
 import Zadatak from "./Components/zadatak";
 const App = () => {
   return (
